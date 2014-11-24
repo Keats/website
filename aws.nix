@@ -74,6 +74,7 @@ in
         server {
           listen          80;
           listen          443;
+          server_name     blog.wearewizards.io;
 
           location / {
               root /var/www/blog;
