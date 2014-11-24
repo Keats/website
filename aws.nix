@@ -66,6 +66,14 @@ in
               root ${website_html}/html;
           }
         }
+        server {
+          listen          80;
+          server_name     blog.wearewizards.io;
+
+          location / {
+              root /var/www/blog;
+          }
+        }
         }
         '';
     };
