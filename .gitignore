@@ -1,6 +1,7 @@
 node_modules/
 .sass-cache/
 bower_components/
+certs_etc/
 
 *.iml
 .idea/

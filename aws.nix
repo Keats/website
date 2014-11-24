@@ -26,6 +26,7 @@ in
     webserver = { resources, pkgs, lib, ... }:
         let
         website_html = pkgs.callPackage ./website.nix {};
+        wearewizards_certs = pkgs.callPackage ./wearewizards_certs.nix {};
 
         in {
         deployment.targetEnv = "ec2";
@@ -61,9 +62,30 @@ in
         server {
           listen          80;
           server_name     wearewizards.io;
+          return          301 https://$server_name$request_uri;
+        }
+        server {
+          listen          443 ssl spdy;
+          server_name     wearewizards.io;
+
+          ssl_stapling on;
+          ssl_stapling_verify on;
+          ssl_trusted_certificate /etc/ssl/certs/ca-bundle.crt;
+
+          ssl_certificate ${wearewizards_certs}/bundle.crt;
+          ssl_certificate_key ${wearewizards_certs}/wearewizards.io.key;
 
           location / {
               root ${website_html}/html;
+          }
+        }
+        server {
+          listen          80;
+          listen          443;
+          server_name     blog.wearewizards.io;
+
+          location / {
+              root /var/www/blog;
           }
         }
         }
