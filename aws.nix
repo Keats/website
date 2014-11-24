@@ -61,7 +61,7 @@ in
         include ${pkgs.nginx}/conf/mime.types;
         server {
           listen          80;
-          listen          443 ssl;
+          listen          443 ssl spdy;
           server_name     wearewizards.io;
 
           ssl_certificate ${wearewizards_certs}/bundle.crt;
