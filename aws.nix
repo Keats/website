@@ -61,6 +61,10 @@ in
         include ${pkgs.nginx}/conf/mime.types;
         server {
           listen          80;
+          server_name     wearewizards.io;
+          return          301 https://$server_name$request_uri;
+        }
+        server {
           listen          443 ssl spdy;
           server_name     wearewizards.io;
 
