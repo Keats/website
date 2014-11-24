@@ -68,6 +68,10 @@ in
           listen          443 ssl spdy;
           server_name     wearewizards.io;
 
+          ssl_stapling on;
+          ssl_stapling_verify on;
+          ssl_trusted_certificate /etc/ssl/certs/ca-bundle.crt;
+
           ssl_certificate ${wearewizards_certs}/bundle.crt;
           ssl_certificate_key ${wearewizards_certs}/wearewizards.io.key;
 
