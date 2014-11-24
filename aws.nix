@@ -69,6 +69,7 @@ in
           server_name     wearewizards.io;
           add_header      Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
+          ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
           ssl_stapling on;
           ssl_stapling_verify on;
           ssl_trusted_certificate /etc/ssl/certs/ca-bundle.crt;
