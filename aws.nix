@@ -67,6 +67,7 @@ in
         server {
           listen          443 ssl spdy;
           server_name     wearewizards.io;
+          add_header      Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
           ssl_stapling on;
           ssl_stapling_verify on;
