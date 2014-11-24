@@ -1,0 +1,40 @@
+@import "common";
+@import "utils";
+
+#the-team {
+  @include section($grey);
+
+  .person {
+    img {
+      @include retina-image(200px, false);
+      border-radius: 50em;
+    }
+
+    h3 {
+      margin-top: 1rem;
+    }
+
+    h4 {
+      margin-top: 0;
+      color: #717171;
+      font-weight: normal;
+    }
+
+    @media #{$small-only} {
+      margin-top: 1rem;
+    }
+
+    a {
+      color: black;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    i {
+      font-size: 1.5rem;
+      vertical-align: middle;
+    }
+  }
+}

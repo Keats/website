@@ -1,0 +1,16 @@
+@import "common";
+
+#say-hi {
+  @include section($green);
+  // need to put back to top at the bottom
+  padding-bottom: 0 !important;
+
+  a {
+    @include links(white);
+  }
+
+  .logo img {
+    @include retina-image(212px, false);
+    margin-bottom: 2rem;
+  }
+}

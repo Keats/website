@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+// Normalize to standardize things a bit
+@import "normalize";
+
+// Typography stuff
+$font-family-body: 'Montserrat', sans-serif;
+$font-family-titles: 'Montserrat', sans-serif;
+@import "type";
+@import "fonts";
+
+// And finally our stuff
+@import "base";
+@import "intro";
+@import "services";
+@import "the_team";
+@import "contact";

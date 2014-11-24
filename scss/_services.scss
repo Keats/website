@@ -1,0 +1,144 @@
+@import "common";
+@import "utils";
+
+
+#services {
+  @include section($green);
+  padding-top: 2em;
+
+  .service-illustration {
+    @include retina-image(170px, false);
+  }
+
+  .web-dev {
+    border-right: 2px solid #ECECEC;
+    text-align: right;
+    padding-right: 3rem;
+  }
+
+  .product-dev {
+    text-align: left;
+    padding-left: 3rem;
+  }
+
+  @media #{$small-only} {
+    .web-dev {
+      border-right: none;
+      text-align: center;
+      padding-right: 0;
+    }
+
+    .product-dev {
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+
+  .service {
+    @media #{$small-only} {
+      margin-top: 1rem;
+
+      .web-dev {
+        border-right: none;
+        text-align: center;
+        padding-right: 0;
+      }
+
+      .product-dev {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+  }
+
+  img.we-love {
+    @include retina-image(38px, false);
+    display: block;
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 2em;
+
+    @media #{$small-only} {
+      margin-top: 2rem;
+    }
+  }
+
+  .techs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: .2em;
+    padding: 1em;
+    margin-bottom: 3rem;
+
+    .tech {
+      flex: 1;
+      align-self: center;
+
+      @media #{$medium-only} {
+        flex: 0 0 50%;
+        margin-top: 2rem;
+
+        // put the go one at the center
+        &:nth-child(5) {
+          flex: 0 0 100%;
+        }
+      }
+
+      @media #{$small-only} {
+        flex: 0 0 100%;
+        margin-top: 2rem;
+      }
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    .python {
+      @include retina-image(148px, false);
+    }
+    .django {
+      @include retina-image(100px, false)
+    }
+    .postgres {
+      @include retina-image(148px, false);
+    }
+    .angular {
+      @include retina-image(148px, false);
+    }
+    .go {
+      @include retina-image(58px, false);
+    }
+  }
+
+  // From http://cssarrowplease.com/
+  .techs {
+    position: relative;
+    border: 2px solid #f5f5f5;
+  }
+  .techs:after, .techs:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .techs:after {
+    border-color: rgba(213, 0, 0, 0);
+    border-bottom-color: $green;
+    border-width: 15px;
+    margin-left: -15px;
+  }
+  .techs:before {
+    border-color: rgba(245, 245, 245, 0);
+    border-bottom-color: #f5f5f5;
+    border-width: 18px;
+    margin-left: -18px;
+  }
+}
