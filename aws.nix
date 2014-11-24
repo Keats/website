@@ -26,6 +26,7 @@ in
     webserver = { resources, pkgs, lib, ... }:
         let
         website_html = pkgs.callPackage ./website.nix {};
+        wearewizards_certs = pkgs.callPackage ./wearewizards_certs.nix {};
 
         in {
         deployment.targetEnv = "ec2";
@@ -60,7 +61,11 @@ in
         include ${pkgs.nginx}/conf/mime.types;
         server {
           listen          80;
+          listen          443 ssl;
           server_name     wearewizards.io;
+
+          ssl_certificate ${wearewizards_certs}/bundle.crt;
+          ssl_certificate_key ${wearewizards_certs}/wearewizards.io.key;
 
           location / {
               root ${website_html}/html;
@@ -68,7 +73,7 @@ in
         }
         server {
           listen          80;
-          server_name     blog.wearewizards.io;
+          listen          443;
 
           location / {
               root /var/www/blog;
