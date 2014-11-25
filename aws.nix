@@ -61,8 +61,8 @@ in
         include ${pkgs.nginx}/conf/mime.types;
         server {
           listen          80;
-          server_name     wearewizards.io;
-          return          301 https://$server_name$request_uri;
+          server_name     wearewizards.io blog.wearewizards.io;
+          return          301 https://$host$request_uri;
         }
         server {
           listen          443 ssl spdy;
@@ -84,9 +84,19 @@ in
           }
         }
         server {
-          listen          80;
-          listen          443;
+          listen          443 spdy;
           server_name     blog.wearewizards.io;
+          add_header      Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+          ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+          ssl_stapling on;
+          ssl_stapling_verify on;
+          ssl_trusted_certificate /etc/ssl/certs/ca-bundle.crt;
+          ssl_prefer_server_ciphers on;
+          ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+
+          ssl_certificate ${wearewizards_certs}/blog_bundle.crt;
+          ssl_certificate_key ${wearewizards_certs}/blog.wearewizards.io.key;
 
           location / {
               root /var/www/blog;
