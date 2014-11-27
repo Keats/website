@@ -64,30 +64,17 @@
   }
 
   .techs {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
     border: 2px solid white;
     border-radius: .2em;
     padding: 1em;
     margin-bottom: 3rem;
 
     .tech {
-      flex: 1;
-      align-self: center;
-
       @media #{$medium-only} {
-        flex: 0 0 50%;
         margin-top: 2rem;
-
-        // put the go one at the center
-        &:nth-child(5) {
-          flex: 0 0 100%;
-        }
       }
 
       @media #{$small-only} {
-        flex: 0 0 100%;
         margin-top: 2rem;
       }
     }

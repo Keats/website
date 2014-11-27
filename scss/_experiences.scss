@@ -1,0 +1,44 @@
+@import "common";
+@import "utils";
+
+#experiences {
+  @include section(white);
+  padding: 2rem;
+
+  img {
+    vertical-align: middle;
+  }
+
+  .companies {
+    padding: 1rem;
+  }
+
+  .company {
+    @media #{$medium-only} {
+      margin-top: 2rem;
+    }
+
+    @media #{$small-only} {
+      margin-top: 2rem;
+    }
+  }
+
+  .cgi {
+    @include retina-image(89px, false);
+  }
+  .gmg {
+    @include retina-image(116px, false)
+  }
+  .google {
+    @include retina-image(159px, false);
+  }
+  .orange {
+    @include retina-image(96px, false);
+  }
+  .rcpch {
+    @include retina-image(116px, false);
+  }
+  .timetric {
+    @include retina-image(115px, false);
+  }
+}
