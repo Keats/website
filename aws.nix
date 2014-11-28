@@ -51,7 +51,6 @@ in
 
         # We want to ssh in but keep annoying people out
         services.openssh.enable = true;
-        services.fail2ban.enable = true;
 
         # Our website is just static content:
         services.nginx.enable = true;
