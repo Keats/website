@@ -98,6 +98,8 @@ in
           ssl_certificate_key ${wearewizards_certs}/blog.wearewizards.io.key;
 
           location / {
+              rewrite ^/(.*)/$ /$1 permanent;
+              try_files $uri.html $uri/ index.html =404;
               root /var/www/blog;
           }
         }
