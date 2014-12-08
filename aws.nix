@@ -78,6 +78,9 @@ in
           ssl_certificate ${wearewizards_certs}/bundle.crt;
           ssl_certificate_key ${wearewizards_certs}/wearewizards.io.key;
 
+          location /clients/ {
+              alias /var/www/clients/;
+          }
           location / {
               root ${website_html}/html;
           }
