@@ -1,10 +1,5 @@
+@import "colours";
 @import "media-queries";
-
-// Colours ---------------------------------------------------------
-$grey: #ECECEC;
-$darker-grey: #BBBBBB;
-$green: #7EDBB5;
-$darker-green: #65C4A4;
 
 // Mixins -----------------------------------------------------------
 
@@ -28,10 +23,10 @@ $darker-green: #65C4A4;
       margin-bottom: 2rem;
     }
 
-    @if $background-color == $green {
-      color: #274a3c;
+    @if $background-color == $light-green {
+      color: $dark-green;
     } @else {
-      color: #515151;
+      color: $text-grey;
     }
   }
 
@@ -46,13 +41,13 @@ $darker-green: #65C4A4;
   }
 }
 
-@mixin links($color: $darker-grey, $hover-color: black) {
+@mixin links($color: white, $hover-color: black) {
   color: $color;
   font-weight: bold;
   text-decoration: none;
 
   &:hover {
-    color: black;
+    color: $hover-color;
     transition: all .3s ease-in-out;
   }
 }

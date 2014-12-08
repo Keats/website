@@ -1,16 +1,33 @@
 @import "common";
 
 #say-hi {
-  @include section($green);
+  @include section($light-green);
   // need to put back to top at the bottom
   padding-bottom: 0 !important;
 
   a {
-    @include links(white);
+    @include links;
   }
 
   .logo img {
     @include retina-image(212px, false);
+    margin-bottom: 2rem;
+  }
+
+  .social {
+    font-size: 2rem;
+    margin: 3rem 0;
+    display: block;
+    a {
+      color: $dark-green;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .intro {
     margin-bottom: 2rem;
   }
 }

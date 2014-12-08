@@ -1,7 +1,6 @@
 @import "common";
 @import "utils";
 
-
 #intro {
   padding-bottom: 3rem;
 
@@ -16,10 +15,10 @@
     background: white;
     opacity: .9;
     box-shadow: rgba(153, 153, 153, 0.75) 0 0 3px 0;
-
-
     height: 60px;
-    line-height: 30px;
+    line-height: 60px;
+    padding: 0 3rem;
+    padding-left: 0;
 
     .logo {
       display: inline-block;
@@ -32,9 +31,28 @@
         @include retina-image(258px, false);
       }
     }
+
+    .links {
+      float: right;
+      margin-right: 4rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      a {
+        color: $grey;
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      @media #{$small-only} {
+        display: none;
+      }
+    }
   }
 
   .tagline {
+    clear: both;
     text-align: center;
     padding-top: 4rem;
 
@@ -55,7 +73,7 @@
     }
 
     span {
-      color: $darker-green;
+      color: $green;
     }
 
     @media #{$small-only} {

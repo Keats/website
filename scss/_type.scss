@@ -8,7 +8,6 @@ $blockquote-border-colour: black !default;
 // Used by most elements to have a consistent margin
 $base-margin: 1.4rem !default;
 
-
 html {
   font-family: $font-family-body;
   font-size: $base-font-size;
@@ -58,7 +57,6 @@ h6 {
   font-size: 1rem;
 }
 
-
 p, ul, ol {
   margin: $base-margin 0 0;
 }
@@ -71,7 +69,9 @@ a {
   }
 }
 
-hr { margin: $base-margin 0; }
+hr {
+  margin: $base-margin 0;
+}
 
 blockquote {
   margin: $base-margin;

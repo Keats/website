@@ -1,9 +1,8 @@
 @import "common";
 @import "utils";
 
-
 #services {
-  @include section($green);
+  @include section($light-green);
   padding-top: 2em;
 
   .service-illustration {
@@ -11,7 +10,7 @@
   }
 
   .web-dev {
-    border-right: 2px solid #ECECEC;
+    border-right: 2px solid $light-grey;
     text-align: right;
     padding-right: 3rem;
   }
@@ -118,7 +117,7 @@
 
   .techs:after {
     border-color: rgba(213, 0, 0, 0);
-    border-bottom-color: $green;
+    border-bottom-color: $light-green;
     border-width: 15px;
     margin-left: -15px;
   }

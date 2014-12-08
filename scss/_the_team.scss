@@ -2,7 +2,7 @@
 @import "utils";
 
 #the-team {
-  @include section($grey);
+  @include section($light-grey);
 
   .person {
     img {
@@ -16,7 +16,8 @@
 
     h4 {
       margin-top: 0;
-      color: #717171;
+      margin-bottom: .5rem;
+      color: $grey;
       font-weight: normal;
     }
 
@@ -25,10 +26,10 @@
     }
 
     a {
-      color: black;
+      color: $grey;
 
       &:hover {
-        color: $green;
+        color: black;
       }
     }
 
